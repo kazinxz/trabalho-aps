@@ -2,94 +2,144 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #f9f9f9;
+  background: #f4f4f9;
   color: #333;
 }
-.logo img {
+
+header {
+  background: #41a946;
+  padding: 15px 30px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo img{
   width: 70px;
 }
-header {
-  background: #349a39;
-  color: #1f740a;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-}
 
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-nav ul {
+.menu {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 20px;
 }
 
-nav ul li a {
+.menu a {
+  color: rgba(255, 255, 255, 0.909);
   text-decoration: none;
-  color: #fff;
   font-weight: 500;
-  transition: 0.3s;
-  font-family: Arial, Helvetica, sans-serif;
+  transition: color 0.3s, border-bottom 0.3s;
   font-size: larger;
 }
 
-nav ul li a:hover {
-  color: #367c38;
+.menu a:hover {
+  color: #66bb6a;
+  border-bottom: 2px solid #66bb6a;
 }
 
 .hero {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(180deg, #c6feca, #ffffff);
+  padding: 50px 20px;
+  background: white;
 }
 
 .hero img {
-  width: 200px;
-  border-radius: 50%;
+  max-width: 250px;
   margin-bottom: 20px;
 }
 
 .hero h1 {
-  font-size: 1.8rem;
+  font-size: 28px;
   margin-bottom: 20px;
 }
 
 .hero h1 span {
   color: #2e7d32;
-  font-weight: bold;
 }
 
 .search-box {
-  display: inline-flex;
-  border: 2px solid #2e7d32;
-  border-radius: 30px;
-  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .search-box input {
-  border: none;
-  padding: 10px 15px;
+  padding: 12px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 25px 0 0 25px;
   outline: none;
-  font-size: 1rem;
+  font-size: large;
 }
 
 .search-box button {
+  padding: 12px 20px;
   background: #2e7d32;
-  color: #fff;
+  color: white;
   border: none;
-  padding: 10px 20px;
+  border-radius: 0 25px 25px 0;
   cursor: pointer;
-  transition: 0.3s;
+  transition: background 0.3s;
 }
 
 .search-box button:hover {
-  background: #1b5e20;
+  background: #388e3c;
+}
+
+.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn-investir {
+  position: relative;
+  display: inline-block;
+  padding: 16px 40px;
+  background: linear-gradient(90deg, #4caf50, #2e7d32);
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 30px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.3s;
+}
+
+.btn-investir::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.1) 50%,
+    transparent 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.btn-investir:hover::before {
+  animation: shine 0.8s forwards;
+}
+
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+
+.btn-investir:hover {
+  background: linear-gradient(90deg, #66bb6a, #388e3c);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
